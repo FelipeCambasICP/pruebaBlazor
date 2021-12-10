@@ -1,0 +1,81 @@
+﻿@page "/login"
+@inject NavigationManager navManager
+
+
+<EditForm EditContext="editContext" OnValidSubmit="@HandleValidateSubmit">
+<div class="container card">
+    <div class="row">
+        <div class="mb-3">
+          <label for="txtEmail" class="form-label">Email address</label>
+          <InputText id="txtEmail" class="form-control" @bind-Value="email"/>
+        </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <InputText id="txtPassword" class="form-control" @bind-Value="password"/>
+        </div>
+
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary btn-lg" >Acceder</button>
+        </div>
+
+        <div class="btn-danger" style="text-align: center;" hidden="@errorLogin">
+            <p style="margin:20px;">Los datos introducidos no son correctos.</p>
+        </div>
+    </div>
+</div>
+</EditForm>
+
+
+@code {
+
+    private string email { get; set; }
+    private string password { get; set;}
+
+    private bool errorLogin = true;
+    private EditContext? editContext;
+    private ValidationMessageStore? messageStore;
+
+    protected override void OnInitialized()
+    {
+        email = "";
+        editContext = new(email);
+        editContext.OnValidationRequested += HandleValidationRequested;
+        messageStore = new(editContext);
+    }
+
+    private void HandleValidationRequested(object? sender, ValidationRequestedEventArgs args)
+    {
+        messageStore?.Clear();
+        if (String.IsNullOrEmpty(email))
+        {
+            messageStore?.Add(() => email, "Es necesario un email para hacer login");
+        }
+    }
+
+    private void HandleValidateSubmit()
+    {
+        doLogin();
+    }
+
+    private void doLogin()
+    {
+        // Hacer validacion
+        if (String.IsNullOrEmpty(email) || String.IsNullOrEmpty(password))
+        {
+            return;
+        }
+
+        if (email.ToLower().Equals("felipe") && password.ToLower().Equals("1234"))
+        {
+            navManager.NavigateTo("/");
+        }
+        else
+        {
+            errorLogin = false;
+        }
+
+    }
+
+
+}

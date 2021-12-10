@@ -1,0 +1,12 @@
+C:\Users\Felipe.Cambas\Documents\Curso Blazor\PracticaPruebas\MiAppBlazor\MiAppBlazor\Shared\bin\Debug\net6.0\MiAppBlazor.Shared.deps.json
+C:\Users\Felipe.Cambas\Documents\Curso Blazor\PracticaPruebas\MiAppBlazor\MiAppBlazor\Shared\bin\Debug\net6.0\MiAppBlazor.Shared.dll
+C:\Users\Felipe.Cambas\Documents\Curso Blazor\PracticaPruebas\MiAppBlazor\MiAppBlazor\Shared\bin\Debug\net6.0\ref\MiAppBlazor.Shared.dll
+C:\Users\Felipe.Cambas\Documents\Curso Blazor\PracticaPruebas\MiAppBlazor\MiAppBlazor\Shared\bin\Debug\net6.0\MiAppBlazor.Shared.pdb
+C:\Users\Felipe.Cambas\Documents\Curso Blazor\PracticaPruebas\MiAppBlazor\MiAppBlazor\Shared\obj\Debug\net6.0\MiAppBlazor.Shared.csproj.AssemblyReference.cache
+C:\Users\Felipe.Cambas\Documents\Curso Blazor\PracticaPruebas\MiAppBlazor\MiAppBlazor\Shared\obj\Debug\net6.0\MiAppBlazor.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Felipe.Cambas\Documents\Curso Blazor\PracticaPruebas\MiAppBlazor\MiAppBlazor\Shared\obj\Debug\net6.0\MiAppBlazor.Shared.AssemblyInfoInputs.cache
+C:\Users\Felipe.Cambas\Documents\Curso Blazor\PracticaPruebas\MiAppBlazor\MiAppBlazor\Shared\obj\Debug\net6.0\MiAppBlazor.Shared.AssemblyInfo.cs
+C:\Users\Felipe.Cambas\Documents\Curso Blazor\PracticaPruebas\MiAppBlazor\MiAppBlazor\Shared\obj\Debug\net6.0\MiAppBlazor.Shared.csproj.CoreCompileInputs.cache
+C:\Users\Felipe.Cambas\Documents\Curso Blazor\PracticaPruebas\MiAppBlazor\MiAppBlazor\Shared\obj\Debug\net6.0\MiAppBlazor.Shared.dll
+C:\Users\Felipe.Cambas\Documents\Curso Blazor\PracticaPruebas\MiAppBlazor\MiAppBlazor\Shared\obj\Debug\net6.0\ref\MiAppBlazor.Shared.dll
+C:\Users\Felipe.Cambas\Documents\Curso Blazor\PracticaPruebas\MiAppBlazor\MiAppBlazor\Shared\obj\Debug\net6.0\MiAppBlazor.Shared.pdb

@@ -1,0 +1,95 @@
+﻿@page "/contacts"
+@using System.Net.Http;
+@inject HttpClient Http;
+@using System.Net.Http.Json;
+@using MiAppBlazor.Shared.Models;
+
+
+
+<h3>Tu Lista de contactos</h3> 
+
+
+
+@if(modelo == null)
+{
+    <p><em>Cargando ....</em></p>
+
+}else
+{
+
+    <p>
+        <button @onclick="cambiarPaginaMenos" class="btn btn-primary">Pagina - 1</button> Pagina @pagina/@modelo?.total_pages  <button @onclick="cambiarPagina" class="btn btn-primary">Pagina + 1</button>
+    </p>
+    
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Email</th>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        @foreach(Contact contacto in contactos)
+        {
+            <RowContacto contacto="contacto"/>
+        }
+    </tbody>
+
+    </table>
+}
+
+
+
+
+@code {
+
+
+    private int pagina = 1;
+    protected Modelo? modelo = new Modelo();
+    protected List<Contact> contactos = new List<Contact>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadInfo();
+    }
+
+    private async void cambiarPagina()
+    {
+        pagina++;
+        if (pagina > modelo?.total_pages)
+        {
+            pagina = modelo?.total_pages ?? default(int);
+        }else
+        {
+            await LoadInfo();    
+        }
+
+    }
+
+    private async void cambiarPaginaMenos()
+    {
+        pagina--;
+        if (pagina < 1)
+        {
+            pagina = 1;    
+        }
+        else
+        {
+            await LoadInfo();    
+        }
+    }
+
+    private async Task LoadInfo()
+    {
+        modelo = await Http.GetFromJsonAsync<Modelo>("https://reqres.in/api/users?page=" + pagina);
+        contactos = modelo?.data.ToList() ?? new List<Contact>();
+
+        //Tratar de evitar esto a toda costa.
+        //StateHasChanged();
+    }
+
+}

@@ -1,0 +1,14 @@
+﻿@using MiAppBlazor.Shared.Models
+
+<tr>
+                <th>@contacto.id</th>
+                <th>@contacto.email</th>
+                <th>@contacto.first_name</th>
+                <th>@contacto.last_name</th>
+            </tr>
+
+@code {
+    [Parameter]
+    public Contact contacto{ get; set; }
+
+}
